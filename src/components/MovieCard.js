@@ -79,7 +79,7 @@ const MovieCard = ({ data, loading, showRating, tvdata }) => {
           <SwiperSlide key={movie.id} onClick={() => { tvdata === true ? nav(`tv/detail/${movie.id}`) : movie?.media_type === 'tv' ? nav(`tv/detail/${movie.id}`) : nav(`movie/detail/${movie.id}`) }} className='hover:scale-110 ease-in-out duration-150 '>
             <div className="relative">
               <div className=" w-[250px] h-[350px] rj-sm:w-[140px] rj-sm:h-[180px] rj-xl:w-[200px] rj-xl:h-[300px] rj-2xl:w-[230px] ">
-                <img src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2${movie.poster_path}`} className='w-[100%] h-[100%] rounded-md object-cover' />
+                <img src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2${movie.poster_path}`} className='w-[100%] h-[100%] rounded-md object-cover' alt='' />
 
               </div>
 

@@ -12,9 +12,9 @@ const Detail = () => {
   const [popup, setPopup] = useState(false);
 
   const { data, isLoading } = useGetIndividualDetailQuery({ type, id });
-  const { data: starCast, isLoading: load } = useGetStarCastQuery({ type, id });
+  const { data: starCast } = useGetStarCastQuery({ type, id });
 
-  const { data: trailer, loading } = useGetMovieTrailerQuery({ type, id });
+  const { data: trailer } = useGetMovieTrailerQuery({ type, id });
 
 
 
@@ -28,7 +28,7 @@ const Detail = () => {
         : null}
 
 
-      {type === 'movie' ? <MovieBannerSection data={data} setPopup={setPopup} /> : <TvBannerSection data={data} setPopup={setPopup} showTrailer={trailer?.results.length != 0 ? true : false} />}
+      {type === 'movie' ? <MovieBannerSection data={data} setPopup={setPopup} /> : <TvBannerSection data={data} setPopup={setPopup} showTrailer={trailer?.results.length !== 0 ? true : false} />}
 
       <div className="">
         {starCast?.cast != null && <StarCast cast={starCast?.cast} />}

@@ -12,7 +12,7 @@ const VideoPopup = ({ setPopup, trailerName, videoID }) => {
           <i className="fa-sharp fa-solid fa-xmark text-lg rj-sm:text-sm hover:text-teal-500" onClick={() => { setPopup(false) }}></i>
         </div>
 
-        <iframe className="w-full aspect-video  absolute bottom-0 rj-lg:top-[7%] rj-lg:translate-y-[-7%] " src={`https://www.youtube.com/embed/${videoID}`} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+        <iframe className="w-full aspect-video  absolute bottom-0 rj-lg:top-[7%] rj-lg:translate-y-[-7%] " src={`https://www.youtube.com/embed/${videoID}`} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" title='Movie Trailer'></iframe>
 
       </div>
     </div>

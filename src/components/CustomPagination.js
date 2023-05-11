@@ -22,7 +22,7 @@ const CustomPagination = ({ setPage, page }) => {
     if (page === 1) {
       generatePageList();
     }
-    else if (page == maxlength) {
+    else if (page === maxlength) {
       setStart(maxlength);
       setLength(maxlength + displayUpto);
     }

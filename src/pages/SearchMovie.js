@@ -6,7 +6,7 @@ import SearchNotFound from '../components/SearchNotFound';
 
 export const SearchMovie = () => {
   const { searchquery } = useParams();
-  const { data, isloading, error } = useGetSearchedMovieQuery(searchquery);
+  const { data, isloading } = useGetSearchedMovieQuery(searchquery);
 
   if (data?.total_results === 0) {
     return (
@@ -27,7 +27,7 @@ export const SearchMovie = () => {
     <div className='px-5  mx-5 rj-sm:px-1 rj-sm:mx-2'>
       <h1 className='text-xl pb-4 text-left  text-teal-500 rj-sm:text-sm'> Search Result : {searchquery.toUpperCase()}</h1>
 
-      {data?.result?.length != 0 && data?.total_results > 0 &&
+      {data?.result?.length !== 0 && data?.total_results > 0 &&
         <GridCardList data={data} type={'movie'} />
       }
 

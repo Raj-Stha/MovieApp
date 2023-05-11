@@ -19,7 +19,7 @@ const TvBannerSection = ({ data, setPopup, showTrailer }) => {
   }
 
   return (
-    <div className='w-[100%] flex px-10 img-wrapper  bg-blend-darken bg-no-repeat bg-cover  h-[100%] py-10 bg-center rj-sm:block rj-sm:px-5 rj-sm:py-2 rj-md:pl-2' style={{ backgroundImage: data?.backdrop_path && data?.backdrop_path != null && data?.backdrop_path != undefined && `url('https://image.tmdb.org/t/p/w600_and_h900_bestv2${data?.backdrop_path}')` }}>
+    <div className='w-[100%] flex px-10 img-wrapper  bg-blend-darken bg-no-repeat bg-cover  h-[100%] py-10 bg-center rj-sm:block rj-sm:px-5 rj-sm:py-2 rj-md:pl-2' style={{ backgroundImage: data?.backdrop_path && data?.backdrop_path !== null && data?.backdrop_path !== undefined && `url('https://image.tmdb.org/t/p/w600_and_h900_bestv2${data?.backdrop_path}')` }}>
 
       <div className="hidden rj-sm:block w-[100%]">
         <h2 className='text-lg text-center font-semibold text-teal-400 rj-sm:pb-3'>{data?.name ?? data?.orginal_name}
@@ -29,7 +29,7 @@ const TvBannerSection = ({ data, setPopup, showTrailer }) => {
 
       <div className="w-[28%] h-auto rj-sm:w-[100%] rj-md:w-[35%]">
         <div className=" w-[70%] rj-sm:w-[50%] mx-auto  rounded-xl  overflow-hidden   ">
-          <img src={data?.poster_path && `https://image.tmdb.org/t/p/w600_and_h900_bestv2${data?.poster_path}`} className='w-[100%] h-[100%] rounded-md object-cover' />
+          <img src={data?.poster_path && `https://image.tmdb.org/t/p/w600_and_h900_bestv2${data?.poster_path}`} className='w-[100%] h-[100%] rounded-md object-cover' alt='' />
         </div>
       </div>
       <div className="right w-[50%] rj-sm:w-[100%] rj-2xl:w-[70%] rj-3xl:w-[60%] ">
@@ -45,7 +45,7 @@ const TvBannerSection = ({ data, setPopup, showTrailer }) => {
               {data?.genres.map((gen, index) => {
                 return (
                   <div className="text-right" key={gen?.id}>
-                    <h2 className=''> {gen?.name} {index != data?.genres.length - 1 && ' | '}&nbsp;</h2>
+                    <h2 className=''> {gen?.name} {index !== data?.genres.length - 1 && ' | '}&nbsp;</h2>
                   </div>
                 )
               })}
@@ -68,7 +68,7 @@ const TvBannerSection = ({ data, setPopup, showTrailer }) => {
           </div>
 
 
-          {data?.episode_run_time.length != 0 && < div className="flex items-center space-x-2 tracking-wider">
+          {data?.episode_run_time.length !== 0 && < div className="flex items-center space-x-2 tracking-wider">
             <i className="fa-solid fa-circle text-xs" style={{ fontSize: 6 }}></i>
             <h3>Ep {data?.episode_run_time[0]} m</h3>
           </div>}

@@ -26,7 +26,7 @@ const MovieBannerSection = ({ data, setPopup }) => {
   }
 
   return (
-    <div className='w-[100%] flex px-10 img-wrapper  bg-blend-darken bg-no-repeat bg-cover  h-[100%] py-10 bg-center rj-sm:block rj-sm:px-5 rj-sm:py-2 rj-md:pl-2 ' style={{ backgroundImage: data?.backdrop_path && data?.backdrop_path != null && data?.backdrop_path != undefined && ` url('https://image.tmdb.org/t/p/w600_and_h900_bestv2/${data?.backdrop_path}')` }}>
+    <div className='w-[100%] flex px-10 img-wrapper  bg-blend-darken bg-no-repeat bg-cover  h-[100%] py-10 bg-center rj-sm:block rj-sm:px-5 rj-sm:py-2 rj-md:pl-2 ' style={{ backgroundImage: data?.backdrop_path && data?.backdrop_path !== null && data?.backdrop_path !== undefined && ` url('https://image.tmdb.org/t/p/w600_and_h900_bestv2/${data?.backdrop_path}')` }}>
 
       <div className="hidden rj-sm:block w-[100%]">
         <h2 className='text-lg text-center font-semibold text-teal-400 rj-sm:pb-3'>{data?.title ?? data?.orginal_title}
@@ -36,7 +36,7 @@ const MovieBannerSection = ({ data, setPopup }) => {
 
       <div className="w-[28%] h-auto rj-sm:w-[100%] rj-md:w-[35%]">
         <div className=" w-[70%] rj-sm:w-[50%] mx-auto  rounded-xl  overflow-hidden  ">
-          <img src={data?.poster_path && data?.poster_path != null && data?.poster_path != undefined && `https://image.tmdb.org/t/p/w600_and_h900_bestv2${data?.poster_path}`} className='w-[100%] h-[100%] rounded-md object-cover' />
+          <img src={data?.poster_path && data?.poster_path !== null && data?.poster_path !== undefined && `https://image.tmdb.org/t/p/w600_and_h900_bestv2${data?.poster_path}`} className='w-[100%] h-[100%] rounded-md object-cover' alt='' />
         </div>
       </div>
       <div className="right w-[50%] rj-sm:w-[100%] rj-2xl:w-[70%] rj-3xl:w-[60%] ">
@@ -52,7 +52,7 @@ const MovieBannerSection = ({ data, setPopup }) => {
               {data?.genres.map((gen, index) => {
                 return (
                   <div className="text-right" key={gen?.id}>
-                    <h2 className=''> {gen?.name} {index != data?.genres.length - 1 && ' | '}&nbsp;</h2>
+                    <h2 className=''> {gen?.name} {index !== data?.genres.length - 1 && ' | '}&nbsp;</h2>
                   </div>
                 )
               })}
